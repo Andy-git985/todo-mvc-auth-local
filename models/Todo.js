@@ -14,7 +14,7 @@ const TodoSchema = new Schema({
   priority: {
     type: String,
   },
-  progess: {
+  progress: {
     type: String,
   },
   userId: {

@@ -19,6 +19,7 @@ module.exports = {
     }
   },
   createTodo: async (req, res) => {
+    console.log(req.body);
     try {
       await Todo.create({
         title: req.body.title,
