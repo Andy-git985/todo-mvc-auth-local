@@ -2,8 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
-  title: String,
-  description: String,
+  title: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+  dueDate: {
+    type: Date,
+  },
+  priority: {
+    type: String,
+  },
+  progess: {
+    type: String,
+  },
   userId: {
     type: String,
     required: true,
