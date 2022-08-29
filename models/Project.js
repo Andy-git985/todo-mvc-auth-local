@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema(
   {
-    title: String,
+    title: {
+      type: String,
+    },
   },
   { collection: 'projects' }
 );
