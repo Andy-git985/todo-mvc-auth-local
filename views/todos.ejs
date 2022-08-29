@@ -144,6 +144,22 @@
             </select>
           </div>
 
+          <!-- ? Project -->
+          <div>
+            <label for="project">Project:</label>
+            <select name="project" data-<%-todos[i]["_id"]%>="project">
+              <option value="">Select one</option>
+              <% for(let j = 0; j < projects.length; j++) {%>
+              <% if (todos[i].project === projects[j].title) { 
+                const selected = "selected"%>
+              <option data-index="<%=j %>" value="<%= projects[j].title %>" <%=selected %>><%= projects[j].title %></option>
+              <%} else { %>
+              <option data-index="<%=j %>" value="<%= projects[j].title %>"><%= projects[j].title %></option>
+              <% } %>
+              <% } %>
+            </select>
+          </div>
+
           <div class="flex edit-btn">
             <div><button type="button" class="update-btn">Update</button></div>
             <div><button type="button" class="delete-btn">Delete</button></div>
@@ -188,6 +204,15 @@
             <option data-index="0" value="todo">To Do</option>
             <option data-index="1" value="doing">Doing</option>
             <option data-index="2" value="done">Done</option>
+          </select>
+        </div>
+        <div id="formProjectElem" class="formFields">
+          <label for="project">Project</label>
+          <select name="project" id="">
+            <option value="">Select one</option>
+            <% for(let i = 0; i < projects.length; i++) {%>
+            <option data-index="<%= i %>" value="<%= projects[i].title %>"><%= projects[i].title %></option>
+            <% } %>
           </select>
         </div>
         <div class="formFields">

@@ -2,6 +2,12 @@ const deleteBtn = document.querySelectorAll('.del');
 const todoItem = document.querySelectorAll('span.not');
 const todoComplete = document.querySelectorAll('span.completed');
 
+const options = {
+  valueNames: ['title', 'dueDate', 'priority'],
+};
+
+const todoList = new List('todoList', options);
+
 const events = (() => {
   const getId = (e) => e.parentElement.parentElement.parentElement.dataset.id;
 
