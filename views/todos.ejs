@@ -60,6 +60,19 @@
             <div data-<%-todos[i]["_id"]%>="description" contenteditable="true"><%= todos[i].description %></div>
           </div>
 
+          <!-- ? Due Date -->
+          <div>
+            <% if (todos[i].dueDate === null) { %>
+            <div class="dueDate hidden"></div>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" name="dueDate" class="dueDate" data-<%-todos[i]["_id"]%>="dueDate" value="">
+            <%} else { %>
+            <div class="dueDate hidden"><%= todos[i].dueDate.toISOString().slice(0, 10) %>"></div>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" name="dueDate" class="dueDate" data-<%-todos[i]["_id"]%>="dueDate" value="<%= todos[i].dueDate.toISOString().slice(0, 10) %>">
+            <% } %>
+          </div>
+
           <!-- ? Priority -->
           <div>
             <label for="priority">Priority:</label>
